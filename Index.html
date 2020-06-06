@@ -63,8 +63,9 @@
         <audio id="mus5c"             src="audio/Skrillex-RaggaBombSZremix.mp3"                           ></audio>
         <audio id="mus6c"             src="audio/TheChainsmokers-Paris.mp3"                               ></audio>
         <audio id="mus7c"             src="audio/Yogi-Burialft.PushaTST.mp3"                              ></audio>
+        <audio id="mus8c"             src="audio/BlackSabbath-IronMan.mp3"                                ></audio>
       </a-assets>
-
+      
     <!--EL VISOR-->
       <a-entity id="jugador"  
                 movement-controls kinematic-body>
@@ -93,7 +94,9 @@
       <!--Para poner las esferas a encontrar del laberinto-->
       <a-entity id="magicball_entity" ></a-entity>
       <!--Para poner obejtos 3d en el laberinto-->
-      <a-entity id="objets_entity"></a-entity>
+      <a-entity id="objets_entity">
+        <a-gltf-model  src="#disorient" position= "0 30 0" rotation="0 0 0" scale="10 10 10" animation="property: rotation; to: 0 361 0; loop: true; dur: 5000; easing: linear"></a-gltf-model>
+      </a-entity>
       <!--Para crear cualquier otra entidad-->
       <a-entity id="others_entity"></a-entity>
 
@@ -107,66 +110,9 @@
 
     <script type="text/Javascript"> 
     //amo esto!
-    window.onload = () => {
-      
-      crearMapa(document.querySelector('#wall_entity'),document.querySelector('#magicball_entity'));
-    }
-
-
-
-    
-
-
-
-
-
-
-
-
+    window.onload = ()=>{
+      crearMapa();}
     </script>
 
   </body>
 </html>
-
-
-
-
-
-
-
-
-<!--
-
-
-PARA GUIARME XD
-
-
-      <a-entity  position="3 20 -3">
-        <a-gltf-model dynamic-body src="#ironman" rotation="1 0 0" scale="0.01 0.01 0.01" mass = "100"></a-gltf-model>
-      </a-entity>
-      <a-entity  dynamic-body position="6 100 -20">
-        <a-gltf-model  src="#brain" rotation="-90 110 110" scale="0.0001 0.0001 0.0001" mass = "0.001" color="blue"></a-gltf-model>
-      </a-entity>
-      <a-entity   position="20 0 -5">
-        <a-gltf-model  src="#foot" rotation="1 0 0" scale="1 1 1" mass = "100" color="#FFAA00"></a-gltf-model>
-      </a-entity>
-
-      <a-entity  position="0 50 -3">
-        <a-gltf-model dynamic-body src="#engine" rotation="90 0 0" scale="1 1 1"></a-gltf-model>
-      </a-entity>
-
-      <a-entity  static-body position="1 3 -3">
-        <a-gltf-model  src="#disorient" rotation="0 0 0" scale="1 1 1" animation="property: rotation; to: 0 361 0; loop: true; dur: 5000; easing: linear"></a-gltf-model>
-      </a-entity>
-
-      <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
-        <a-sphere sound="autoplay: true; src: #mus3c" static-body position="5 2 0" src="#barneyS"></a-sphere>
-      </a-entity>
-
-      <a-box static-body position="-1 0.5 -5" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" src="#barneyS"
-      animation__2="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-box>
-
-      <a-image  src="#barneyS" scale="5 5 5" rotation = "0 90 0" position="5 3 -1" event-set__loaded="_delay: 1500"></a-image>
-
-
--->
